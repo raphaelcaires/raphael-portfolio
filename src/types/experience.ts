@@ -1,7 +1,7 @@
 // src/types/experience.ts
 export interface Skill {
   name: string;
-  level: 'Basic' | 'Intermediate' | 'Experienced';
+  level: 'Básico' | 'Intermediário' | 'Avançado';
   icon: string;
 }
 

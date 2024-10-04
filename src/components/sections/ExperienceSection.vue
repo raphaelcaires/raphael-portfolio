@@ -74,7 +74,7 @@ const backendSkills = ref<Skill[]>([
   },
   {
     name: 'NestJS',
-    level: 'Iniciante',
+    level: 'Básico',
     icon: 'express'
   },
   {
