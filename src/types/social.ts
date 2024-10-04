@@ -49,7 +49,7 @@ export type SocialURLBuilder = (username: string) => string;
 
 // Objeto com funções para construir URLs de redes sociais
 export const SOCIAL_URL_BUILDERS: Record<SocialPlatform, SocialURLBuilder> = {
-  linkedin: (username: string) => `https://linkedin.com/in/${username}`,
+  linkedin: (username: string) => `https://linkedin.com/in/dev-${username}`,
   github: (username: string) => `https://github.com/${username}`,
   email: (email: string) => `mailto:${email}`
 };
