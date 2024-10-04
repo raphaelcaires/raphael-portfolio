@@ -1,0 +1,62 @@
+<template>
+  <section id="contact" class="contact-section q-pa-lg">
+    <div class="text-center q-mb-xl">
+      <div class="text-subtitle1">Entre em</div>
+      <h2 class="text-h3 q-my-none">Contato</h2>
+    </div>
+
+    <div class="row justify-center q-gutter-lg">
+      <q-card 
+        v-for="info in contactInfo"
+        :key="info.title"
+        flat
+        bordered
+        class="contact-card"
+      >
+        <q-card-section class="text-center">
+          <q-icon :name="info.icon" size="2rem" color="primary" />
+          <div class="text-h6 q-mt-sm">{{ info.title }}</div>
+          <a 
+            :href="info.link"
+            class="text-primary"
+            target="_blank"
+          >
+            {{ info.value }}
+          </a>
+        </q-card-section>
+      </q-card>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const contactInfo = ref([
+  {
+    icon: 'email',
+    title: 'Email',
+    value: 'raphaelcaires@gmail.com',
+    link: 'mailto:raphaelcaires@gmail.com'
+  },
+  {
+    icon: 'fab fa-linkedin',
+    title: 'LinkedIn',
+    value: 'linkedin.com/in/dev-raphaelcaires',
+    link: 'https://www.linkedin.com/in/dev-raphaelcaires/'
+  }
+]);
+</script>
+
+<style lang="scss" scoped>
+.contact-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-card {
+  min-width: 300px;
+}
+</style>

@@ -12,6 +12,11 @@
     }
   ],
   "compilerOptions": {
-    "module": "NodeNext"
+    "module": "ESNext",
+    "types": ["node"],
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "allowJs": true,
+    "resolveJsonModule": true
   }
 }
