@@ -184,10 +184,10 @@ const scrollToContact = () => {
 }
 
 .profile-image {
-  border-radius: 2rem;
+  border-radius: 100rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-radius: 100rem;
+  max-width: 80%;
   
   &:hover {
     transform: scale(1.02);
@@ -213,7 +213,7 @@ const scrollToContact = () => {
   }
 
   .profile-image {
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
   }
 }
