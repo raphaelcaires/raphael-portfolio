@@ -1,17 +1,17 @@
 <template>
   <section id="about" class="about-section q-pa-lg">
     <div class="text-center q-mb-xl">
-      <div class="text-subtitle1">Saiba mais</div>
+      <div class="text-subtitle1" style="color:#555555">Saiba mais</div>
       <h2 class="text-h3 q-my-none">Sobre mim</h2>
     </div>
 
-    <div class="row q-col-gutter-lg">
-      <div class="col-12 col-md-5 q-pl-xl">
+    <div class="row items-center">
+      <div class="col-12 col-md-5" style="padding: 5rem;">
         <q-img
           src="../../assets/images/about-pic.png"
           spinner-color="primary"
           class="rounded-borders"
-          style="width: 70%"
+          style="width: 100%;"
         />
       </div>
 
@@ -22,10 +22,10 @@
             :key="detail.title"
             class="col-12 col-sm-6"
           >
-            <q-card flat bordered>
+            <q-card flat bordered class="q-pa-lg">
               <q-card-section>
-                <div class="row items-center q-gutter-sm">
-                  <q-icon :name="detail.icon" size="md" color="primary" />
+                <div class="text-center q-gutter-sm">
+                  <q-icon :name="detail.icon" size="md" color="black" />
                   <div>
                     <div class="text-h6">{{ detail.title }}</div>
                     <div class="text-subtitle2">{{ detail.description }}</div>
@@ -68,3 +68,12 @@ const details = ref([
   }
 ]);
 </script>
+
+<style lang="scss" scoped>
+.q-img {
+  border-radius: 2rem;
+}
+.q-card {
+  border-radius: 2rem;
+}
+</style>

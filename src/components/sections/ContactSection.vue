@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="contact-section q-pa-lg">
     <div class="text-center q-mb-xl">
-      <div class="text-subtitle1">Entre em</div>
+      <div class="text-subtitle1" style="color:#555555">Entre em</div>
       <h2 class="text-h3 q-my-none">Contato</h2>
     </div>
 
@@ -14,7 +14,7 @@
         class="contact-card"
       >
         <q-card-section class="text-center">
-          <q-icon :name="info.icon" size="2rem" color="primary" />
+          <q-icon :name="info.icon" size="2rem" color="black" />
           <div class="text-h6 q-mt-sm">{{ info.title }}</div>
           <a 
             :href="info.link"
@@ -58,5 +58,6 @@ const contactInfo = ref([
 
 .contact-card {
   min-width: 300px;
+  border-radius: 2rem;
 }
 </style>

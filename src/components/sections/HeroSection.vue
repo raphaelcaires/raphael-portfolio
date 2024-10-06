@@ -1,6 +1,6 @@
 <template>
   <section id="profile" class="hero-section">
-    <q-card flat bordered class="hero-card">
+    <q-card flat class="hero-card text-center">
       <q-card-section horizontal>
         <q-card-section class="col-12 col-md-6 q-pa-lg content-section">
           <!-- Profile Text Content -->
@@ -11,19 +11,21 @@
           </div>
           
           <!-- Action Buttons -->
-          <div class="actions q-gutter-md">
+          <div class="actions q-gutter-lg items-center justify-center">
             <q-btn
               unelevated
-              color="primary"
+              color="black"
               :label="profile.cv.label"
               icon="download"
+              style="border-radius: 2rem; padding: 1rem 3rem;"
               @click="handleDownloadCV"
             />
             <q-btn
               outline
-              color="primary"
+              color="black"
               label="Entre em contato"
               icon="mail"
+              style="border-radius: 2rem; padding: 1rem 2rem;"
               @click="scrollToContact"
             />
           </div>
@@ -135,23 +137,29 @@ const scrollToContact = () => {
 .profile-text {
   .name {
     font-weight: 700;
-    background: linear-gradient(45deg, var(--q-primary), #2196F3);
+    background: #000000;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .title {
-    color: var(--q-secondary);
-    font-weight: 500;
+    color: #555555;
+    font-weight: 600;
   }
+}
+
+.text-subtitle1 {
+  color: #555555;
+  font-weight: 600;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   
   .q-btn {
-    min-width: 150px;
+    min-width: 250px;
   }
 }
 
@@ -179,6 +187,7 @@ const scrollToContact = () => {
   border-radius: 2rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  border-radius: 100rem;
   
   &:hover {
     transform: scale(1.02);

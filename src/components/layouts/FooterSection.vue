@@ -1,7 +1,7 @@
 <template>
-  <q-footer class="bg-white text-dark">
+  <q-footer bordered class="bg-white text-dark">
     <div class="footer-content q-pa-md">
-      <div class="row justify-center q-mb-md">
+      <!-- <div class="row justify-center q-mb-md">
         <q-tabs>
           <q-route-tab 
             v-for="item in ['Sobre', 'Experiência', 'Projetos', 'Contato']"
@@ -10,7 +10,7 @@
             :label="item"
           />
         </q-tabs>
-      </div>
+      </div> -->
       <div class="text-center text-caption">
         Copyright © {{ new Date().getFullYear() }} Raphael Caires 👾.
       </div>

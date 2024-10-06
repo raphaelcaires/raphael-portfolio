@@ -1,15 +1,15 @@
 <template>
   <section id="experience" class="experience-section q-pa-lg">
     <div class="text-center q-mb-lg">
-      <div class="text-subtitle1">Conheça minhas</div>
+      <div class="text-subtitle1" style="color:#555555">Conheça minhas</div>
       <div class="text-h3">Habilidades</div>
     </div>
     
-    <div class="row q-col-gutter-md">
+    <div class="row q-col-gutter-xl">
       <div v-for="(section, index) in sections" 
           :key="index" 
           class="col-12 col-md-6">
-        <q-card flat bordered>
+        <q-card flat bordered class="q-pa-lg">
           <q-card-section>
             <div class="text-h6">
               {{ section.title }}
@@ -21,7 +21,7 @@
                   class="col-12 col-sm-6">
                 <q-item>
                   <q-item-section avatar>
-                    <q-icon name="check_circle" color="positive" />
+                    <q-icon name="check_circle" color="black" />
                   </q-item-section>
                   
                   <q-item-section>
@@ -108,5 +108,8 @@ const sections = ref<ExperienceSection[]>([
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.q-card {
+  border-radius: 2rem;
 }
 </style>

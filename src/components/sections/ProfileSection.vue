@@ -3,7 +3,7 @@
     <div class="row items-center q-col-gutter-md">
       <div class="col-12 col-md-6">
         <q-img
-          src="./assets/profile-pic.png"
+          :src="profilePic"
           spinner-color="white"
           style="height: 400px; max-width: 400px"
           class="rounded-borders"
@@ -26,6 +26,6 @@
   </section>
 </template>
 
-<script setup>
-// No additional logic needed for this component
+<script setup lang="ts">
+import profilePic from '@/assets/profile-pic.png';
 </script>

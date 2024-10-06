@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="bg-white text-dark">
+  <q-header flat class="bg-white text-dark q-py-md">
     <q-toolbar>
       <q-toolbar-title class="text-weight-bold"> Raphael Caires </q-toolbar-title>
 

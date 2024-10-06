@@ -1,17 +1,17 @@
 <template>
   <section id="projects" class="projects-section q-pa-lg">
     <div class="text-center q-mb-xl">
-      <div class="text-subtitle1">Navegue pelos meus recentes</div>
+      <div class="text-subtitle1" style="color:#555555">Navegue pelos meus recentes</div>
       <h2 class="text-h3 q-my-none">Projetos</h2>
     </div>
 
-    <div class="row q-col-gutter-lg">
+    <div class="row q-col-gutter-xl">
       <div 
         v-for="project in projects" 
         :key="project.title"
         class="col-12 col-md-4"
       >
-        <q-card class="project-card">
+        <q-card flat bordered class="project-card text-center">
           <q-img
             :src="project.image"
             :alt="project.title"
@@ -27,7 +27,7 @@
           <q-card-actions align="center">
             <q-btn
               flat
-              color="primary"
+              color="black"
               label="Github"
               :href="project.githubUrl"
               target="_blank"
@@ -35,7 +35,7 @@
             />
             <q-btn
               flat
-              color="primary"
+              color="black"
               label="Live Demo"
               :href="project.demoUrl"
               target="_blank"
@@ -76,3 +76,9 @@ const projects = ref<Project[]>([
   }
 ]);
 </script>
+
+<style  lang="scss" scoped>
+.project-card {
+  border-radius: 2rem;
+}
+</style>
