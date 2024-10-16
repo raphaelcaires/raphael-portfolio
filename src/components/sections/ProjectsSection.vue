@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="projects-section q-pa-lg">
+  <section id="projects" class="q-pa-md">
     <div class="text-center q-mb-xl">
       <div class="text-subtitle1" style="color:#555555">Navegue pelos meus recentes</div>
       <h2 class="text-h3 q-my-none">Projetos</h2>
@@ -77,8 +77,10 @@ const projects = ref<Project[]>([
 ]);
 </script>
 
-<style  lang="scss" scoped>
-.project-card {
-  border-radius: 2rem;
-}
+<style  lang="sass" scoped>
+#projects
+  padding-top: 14rem
+  
+.project-card
+  border-radius: 2rem
 </style>

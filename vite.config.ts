@@ -1,20 +1,28 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
-import { resolve } from 'path'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
+import vue from '@vitejs/plugin-vue'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [
     vue({
       template: { transformAssetUrls }
     }),
+    VueDevTools(),
     quasar({
-      sassVariables: 'src/styles/quasar-variables.scss'
-    })
+      sassVariables: 'src/assets/styles/quasar-variables.sass'
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      symbolId: 'icon-[name]',
+    }),
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })

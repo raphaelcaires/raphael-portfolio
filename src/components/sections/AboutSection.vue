@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="about-section q-pa-lg">
+  <q-section id="about" class="q-pa-xl">
     <div class="text-center q-mb-xl">
-      <div class="text-subtitle1" style="color:#555555">Saiba mais</div>
+      <div class="text-subtitle1" style="color:#555555; font-weight: 600;">Saiba mais</div>
       <h2 class="text-h3 q-my-none">Sobre mim</h2>
     </div>
 
@@ -49,7 +49,7 @@
         </p>
       </div>
     </div>
-  </section>
+  </q-section>
 </template>
 
 <script setup lang="ts">
@@ -69,11 +69,13 @@ const details = ref([
 ]);
 </script>
 
-<style lang="scss" scoped>
-.q-img {
-  border-radius: 2rem;
-}
-.q-card {
-  border-radius: 2rem;
-}
+<style lang="sass" scoped>
+#about
+  padding-top: 10rem
+  
+.q-img
+  border-radius: 2rem
+  
+.q-card
+  border-radius: 2rem
 </style>

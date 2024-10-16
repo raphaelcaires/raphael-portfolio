@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="contact-section q-pa-lg">
+  <section id="contact" class="q-pa-lg">
     <div class="text-center q-mb-xl">
       <div class="text-subtitle1" style="color:#555555">Entre em</div>
       <h2 class="text-h3 q-my-none">Contato</h2>
@@ -48,16 +48,16 @@ const contactInfo = ref([
 ]);
 </script>
 
-<style lang="scss" scoped>
-.contact-section {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+<style lang="sass" scoped>
+#contact
+  min-height: 80vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding-top: 10rem
+  margin-bottom: 10rem
 
-.contact-card {
-  min-width: 300px;
-  border-radius: 2rem;
-}
+.contact-card 
+  min-width: 300px
+  border-radius: 2rem
 </style>

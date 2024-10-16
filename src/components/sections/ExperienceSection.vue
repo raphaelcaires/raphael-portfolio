@@ -1,8 +1,8 @@
 <template>
-  <section id="experience" class="experience-section q-pa-lg">
+  <section id="experience" class="q-pa-lg">
     <div class="text-center q-mb-lg">
       <div class="text-subtitle1" style="color:#555555">Conheça minhas</div>
-      <div class="text-h3">Habilidades</div>
+      <div class="text-h3">Experiência</div>
     </div>
     
     <div class="row q-col-gutter-xl">
@@ -62,8 +62,7 @@ const frontendSkills = ref<Skill[]>([
     name: 'CSS',
     level: 'Avançado',
     icon: 'css'
-  },
-  // Add more skills
+  }
 ])
 
 const backendSkills = ref<Skill[]>([
@@ -86,8 +85,7 @@ const backendSkills = ref<Skill[]>([
     name: 'PostgreSQL',
     level: 'Avançado',
     icon: 'express'
-  },
-  // Add more skills
+  }
 ])
 
 const sections = ref<ExperienceSection[]>([
@@ -102,14 +100,13 @@ const sections = ref<ExperienceSection[]>([
 ])
 </script>
 
-<style lang="scss" scoped>
-.experience-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.q-card {
-  border-radius: 2rem;
-}
+<style lang="sass" scoped>
+#experience
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.q-card
+  border-radius: 2rem
 </style>

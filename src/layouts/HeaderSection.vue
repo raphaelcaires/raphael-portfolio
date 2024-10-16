@@ -11,6 +11,7 @@
             :key="item.label"
             :to="item.href"
             :label="item.label"
+            @click.prevent="scrollToSection(item.href)"
           />
         </q-tabs>
       </div>
@@ -23,7 +24,7 @@
               <q-item
                 v-for="item in menuItems"
                 :key="item.label"
-                :href="item.href"
+                @click.prevent="scrollToSection(item.href)"
                 clickable
                 v-close-popup
               >
@@ -52,15 +53,20 @@ const menuItems = [
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+const scrollToSection = (href: string) => {
+  const section = document.querySelector(href)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
-<style lang="scss" scoped>
-.q-header {
-  border-bottom: 1px solid #eee;
-}
-
-.q-toolbar {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+<style lang="sass" scoped>
+.q-header 
+  border-bottom: 1px solid #eee
+  
+.q-toolbar
+  max-width: 1200px
+  margin: 0 auto
 </style>

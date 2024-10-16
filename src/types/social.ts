@@ -1,8 +1,8 @@
 export interface SocialLink {
-  icon: string;    // Ícone do Font Awesome ou outro conjunto de ícones
-  url: string;     // URL do perfil social
-  name: string;    // Nome da rede social (para uso em aria-label e title)
-  color?: string;  // Cor opcional específica para o ícone/botão
+  icon: string;
+  url: string;
+  name: string;
+  color?: string;
 }
 
 export interface SocialLinks {
@@ -11,32 +11,31 @@ export interface SocialLinks {
   email: SocialLink;
 }
 
-// Objeto de constantes para redes sociais pré-configuradas
-export const DEFAULT_SOCIAL_LINKS: SocialLinks = {
+// Redes sociais padrão
+export const defaultSocialLinks: SocialLinks = {
   linkedin: {
     icon: 'fab fa-linkedin',
-    url: 'https://linkedin.com/',
+    url: 'https://linkedin.com/in/dev-',
     name: 'LinkedIn',
-    color: '#0077B5'
+    color: '#0077B5',
   },
   github: {
     icon: 'fab fa-github',
     url: 'https://github.com/',
     name: 'GitHub',
-    color: '#333'
+    color: '#333',
   },
   email: {
-    icon: 'email',
+    icon: 'fas fa-envelope',
     url: 'mailto:example@email.com',
     name: 'Email',
-    color: '#EA4335'
-  }
+    color: '#EA4335',
+  },
 };
 
-// Type para validação de plataformas sociais suportadas
-export type SocialPlatform = keyof typeof DEFAULT_SOCIAL_LINKS;
+// Tipos para as plataformas sociais
+export type SocialPlatform = keyof typeof defaultSocialLinks;
 
-// Interface para configuração de links sociais com informações adicionais
 export interface SocialConfig {
   platform: SocialPlatform;
   username: string;
@@ -44,12 +43,35 @@ export interface SocialConfig {
   customColor?: string;
 }
 
-// Type helper para criar URLs de redes sociais
-export type SocialURLBuilder = (username: string) => string;
+// Função para construir URLs de redes sociais
+export const buildSocialURL = (platform: SocialPlatform, username: string): string => {
+  const baseURL = defaultSocialLinks[platform].url;
+  const urlBuilders: Record<SocialPlatform, (username: string) => string> = {
+    linkedin: (username) => `${baseURL}${username}`,
+    github: (username) => `${baseURL}${username}`,
+    email: (username) => `mailto:${username}`,
+  };
 
-// Objeto com funções para construir URLs de redes sociais
-export const SOCIAL_URL_BUILDERS: Record<SocialPlatform, SocialURLBuilder> = {
-  linkedin: (username: string) => `https://linkedin.com/in/dev-${username}`,
-  github: (username: string) => `https://github.com/${username}`,
-  email: (email: string) => `mailto:${email}`
+  const builder = urlBuilders[platform];
+
+  if (!builder) {
+    throw new Error(`Plataforma desconhecida: ${platform}`);
+  }
+  return builder(username);
+};
+
+// Obter links sociais com base nas configurações
+export const getSocialLinks = (configs: SocialConfig[]): SocialLink[] => {
+  return configs.map(({ platform, username, showIcon = true, customColor }) => {
+    const { icon, name } = defaultSocialLinks[platform];
+    const url = buildSocialURL(platform, username);
+    const color = customColor || defaultSocialLinks[platform].color;
+
+    return {
+      icon: showIcon ? icon : '',
+      url,
+      name,
+      color,
+    };
+  });
 };
