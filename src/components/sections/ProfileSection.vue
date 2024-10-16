@@ -31,7 +31,7 @@
           </div>
           
           <!-- Social Links -->
-          <div class="social-links q-mt-lg">
+          <div class="social-links q-mt-lg items-center justify-center">
             <q-btn
               v-for="link in socialLinks"
               :key="link.name"
@@ -66,9 +66,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import type { SocialConfig } from '@/types/social';
-import { getSocialLinks } from '@/types/social';
+import { ref, computed } from 'vue'
+import type { SocialConfig } from '@/types/social'
+import { getSocialLinks } from '@/types/social'
+import curriculum from '@/assets/images/raphaelcaires-cv.pdf'
 
 interface Profile {
   name: string;
@@ -85,7 +86,7 @@ const profile = ref<Profile>({
   title: 'Engenheiro de Software',
   greeting: "Olá, eu sou",
   cv: {
-    url: '/path-to-cv.pdf',
+    url: curriculum,
     label: 'Download CV'
   }
 });
@@ -100,8 +101,11 @@ const socialConfigs: SocialConfig[] = [
 const socialLinks = computed(() => getSocialLinks(socialConfigs));
 
 const handleDownloadCV = () => {
-  window.open(profile.value.cv.url, '_blank');
-};
+  const link = document.createElement('a')
+  link.href = profile.value.cv.url
+  link.download = 'raphaelcaires-cv.pdf'
+  link.click()
+}
 
 const scrollToContact = () => {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

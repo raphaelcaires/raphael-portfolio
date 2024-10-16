@@ -44,6 +44,7 @@ import { ref } from 'vue'
 const isMenuOpen = ref(false)
 
 const menuItems = [
+  { label: 'Perfil', href: '#profile' },
   { label: 'Sobre', href: '#about' },
   { label: 'Experiência', href: '#experience' },
   { label: 'Projetos', href: '#projects' },
