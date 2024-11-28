@@ -13,7 +13,9 @@ export default defineConfig({
     }),
     VueDevTools(),
     quasar({
-      sassVariables: 'src/assets/styles/quasar-variables.sass'
+      sassVariables: fileURLToPath(
+        new URL('./src/assets/styles/quasar-variables.sass', import.meta.url)
+      )
     }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
